@@ -58,19 +58,34 @@ def lemmatize_and_clean(text):
     return cleaned_text
 
 # Patterns
-patterns = {
-    'smoker': r"sm.k.r|s.m.k.r\b",
-    'dhumpai': r"d.m.a.|d..mp..|.om.a.|umpa.\b",
-    'alchemy': r"al.k.m|.lch.m.\b",
-    'benson': r"..ns.n\b",
-    'goldleaf': r"go.lb|gol..lea.|g.l...|g.l../b",
-    'dunhil': r"d.n.h.l|d.nh.l|.an.i.l|.an.i.l\b",
-    'smooth': r".m..th|sm.d\b",
-    'thanda_flvr': r"th.nd..fl.v|t.nd...fl.v|th.nd...fl.v|t.nd..fl.v|..de.fl.v|.and..fl.v|..anda.fl..\b",
-    'best_tobacco': r".est.t.b..|.est..a.o|.est.o.a.o|.est.o.\b"
-}
+# patterns = {
+#     'smoker': r"sm.k.r|s.m.k.r\b",
+#     'dhumpai': r"d.m.a.|d..mp..|.om.a.|umpa.\b",
+#     'alchemy': r"al.k.m|.lch.m.\b",
+#     'benson': r"..ns.n\b",
+#     'goldleaf': r"go.lb|gol..lea.|g.l...|g.l../b",
+#     'dunhil': r"d.n.h.l|d.nh.l|.an.i.l|.an.i.l\b",
+#     'smooth': r".m..th|sm.d\b",
+#     'thanda_flvr': r"th.nd..fl.v|t.nd...fl.v|th.nd...fl.v|t.nd..fl.v|..de.fl.v|.and..fl.v|..anda.fl..\b",
+#     'best_tobacco': r".est.t.b..|.est..a.o|.est.o.a.o|.est.o.\b"
+# }
+# patterns = {
+#     'Unique Capsule': r"unique capsul|unit capsul|uniq...capsul|uni..capsul\b",
+#     'Refreshing Taste and Smell': r"refreshing taste smell|refreshing taste milk\b",
+#     'Benson & Hadges Breeze': r"benson he.es breez|benson hess breez|benson he..e breez|benson haze breez|benson hezes bee|banson breez|banson hedge breathe|banson hedge bridge|benson hedge bre|benson hedge bridge\b"
+# }
 
-    # Find and count matches for each pattern
+patterns = {
+    'Unique Capsule': r"unique capsul|unit capsul|uniq...capsul|uni..capsul\b",
+    'Refreshing Taste and Smell': r"refreshing taste smell|refreshing taste milk|refreshing test smell|ripe singh taste|repressing taste smell\b",
+    'Benson & Hadges Breeze': r"benson.hage.bree|benson.hage..bree|banson.hage.bree|banson.hage..bree|benson he.es breez|benson hess breez|benson he..e breez|benson haze breez|benson hezes bee|banson breez|banson hedge breathe|banson hedge bridge|benson hedge bre|benson hedge bridge| benson haze brie|banson haze breeze|banson hedge breez\b"
+}
+# patterns = {
+#     'Unique Capsule': r'\b(?:uni(?:que)?|unit|uniq\.+|uni\.+)\s*capsul\b',
+#     'Refreshing Taste and Smell': r'\b(?:refreshing|ripe|repressing)\s+(?:taste\s+(?:smell|milk)|test\s+smell)\b',
+#     'Benson & Hadges Breeze': r'\b(?:benson\s+h(?:ess|aze|ezes|edge)\s+breez|banson\s+(?:haze\s+breez|hedge\s+(?:breez|bre))|benson\s+h(?:aze\s+brie|edge\s+bridge))\b',
+# }
+# Find and count matches for each pattern
 def nlp_bat(text):
     results = {}
     all_match = {}

@@ -4,16 +4,11 @@ from typing_extensions import Annotated
 import string
 
 patterns = {
-    'smoker': r"sm.k.r|s.m.k.r\b",
-    'dhumpai': r"d.m.a.|d..mp..|.om.a.|umpa.\b",
-    'alchemy': r"al.k.m|.lch.m.\b",
-    'benson': r"..ns.n\b",
-    'goldleaf': r"go.lb|gol..lea.|g.l...|g.l../b",
-    'dunhil': r"d.n.h.l|d.nh.l|.an.i.l|.an.i.l\b",
-    'smooth': r".m..th|sm.d\b",
-    'thanda_flvr': r"th.nd..fl.v|t.nd...fl.v|th.nd...fl.v|t.nd..fl.v|..de.fl.v|.and..fl.v|..anda.fl..\b",
-    'best_tobacco': r".est.t.b..|.est..a.o|.est.o.a.o|.est.o.\b"
+    'Unique Capsule': r"unique capsul|unit capsul|uniq...capsul|uni..capsul\b",
+    'Refreshing Taste and Smell': r"refreshing taste smell|refreshing taste milk|refreshing test smell|ripe singh taste|repressing taste smell\b",
+    'Benson & Hadges Breeze': r"benson he.es breez|benson hess breez|benson he..e breez|benson haze breez|benson hezes bee|banson breez|banson hedge breathe|banson hedge bridge|benson hedge bre|benson hedge bridge| benson haze brie|banson haze breeze|banson hedge breez\b"
 }
+
 
     # Find and count matches for each pattern
 def nlp_bat(text):
