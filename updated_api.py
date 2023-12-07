@@ -56,7 +56,7 @@ def lemmatize_and_clean(text):
 patterns = {
     'Unique Capsule': r"\b(?:uni(?:que)?|unit|uniq\.+|uni\.+)\s*capsul",
     'Refreshing Taste and Smell': r"\b(?:refreshing|ripe|repressing)\s+(?:taste\s+(?:smell|milk)|test\s+smell)",
-    'Benson & Hadges Breeze':r"\b(?:(b.*?son)\s+(h(?:.*?))\s+(br))",
+    'Benson & Hadges Breeze':r"\b(?:((b|p|v|f)(a|e).*?son)\s+(h(?:.*?))\s+(br))",
 }
 
 
@@ -167,6 +167,6 @@ async def create_items(items: Union[Item, List[Item]]):
 
 if __name__ == "__main__":
     try:
-        uvicorn.run(app, host="127.0.0.1", port=8020)
+        uvicorn.run(app, host="127.0.0.1", port=1111)
     finally:
         pass
