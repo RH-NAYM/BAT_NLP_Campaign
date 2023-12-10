@@ -68,7 +68,7 @@ patterns = {
 }
 
 
-async def nlp_bat(text):
+async def nlp_bat(text): 
     results = {}
     all_match = {}
     for name, pattern in patterns.items():
