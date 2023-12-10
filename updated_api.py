@@ -216,7 +216,7 @@ async def lemmatize_and_clean(text):
 
 patterns = {
     'Unique Capsule': r"\b(((u(?:nit|niq).*?)\s+(?:capsul))|(?:uni.*?capsul))",
-    'Refreshing Taste and Smell': r"\b((((ref|rif|rip|rep).*?)\s+t(?:a|e|i|y)s(.*?)\s+(sm|(?:.*?sm))(?:el|il|al|ol|.*?))|((?:in.*?)\s+t(?:a|e|i|y)s.*?\s+(.*?)(?:mel|mil|mal|mol|mail)))",
+    'Refreshing Taste and Smell': r"\b((((ref|rif|rip|rep|ep).*?)\s+t(?:a|e|i|y)s(.*?)\s+(sm|(?:.*?sm))(?:el|il|al|ol|.*?))|((?:in.*?)\s+t(?:a|e|i|y)s.*?\s+(.*?)(?:mel|mil|mal|mol|mail)))",
     'Benson & Hadges Breeze':r"\b((b|p|v|f)(?:(an|en|a|e)(?:s|ch)(?:on).*?)\s+h(?:.*?)\s+(b|p|v|f)(?:re|ee))",
 }
 
