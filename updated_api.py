@@ -17,14 +17,14 @@ from datetime import datetime
 from api_secrets import API_KEY_ASSEMBLYAI
 
 
-logging.basicConfig(filename0="BAT_NLP_Campaign.log",
-                    filemode='w')
-logger = logging.getLogger("BAT")
-logger.setLevel(logging.DEBUG)
-file_handler = logging.FileHandler("BAT_NLP_Campaign.log")
-logger.addHandler(file_handler)
-total_done = 0
-total_error = 0
+# logging.basicConfig(filename0="BAT_NLP_Campaign.log",
+#                     filemode='w')
+# logger = logging.getLogger("BAT")
+# logger.setLevel(logging.DEBUG)
+# file_handler = logging.FileHandler("BAT_NLP_Campaign.log")
+# logger.addHandler(file_handler)
+# total_done = 0
+# total_error = 0
 
 
 
@@ -162,15 +162,15 @@ async def create_items(items: Union[Item, List[Item]]):
         print("Result Sent to User:", results)
         return results
     except Exception as e:
-        global total_error
-        total_error += 1
-        logger.info(f"Time:{get_bd_time()}, Execution Failed and Total Failed Execution : {total_error}, Payload:{items}, Response : {results}")
-        logger.error(str(e))
+        # global total_error
+        # total_error += 1
+        # logger.info(f"Time:{get_bd_time()}, Execution Failed and Total Failed Execution : {total_error}, Payload:{items}, Response : {results}")
+        # logger.error(str(e))
         return {"AI": f"Error: {str(e)}"}
     finally:
-        global total_done
-        total_done +=1
-        logger.info(f"Time:{get_bd_time()}, Execution Done and Total Successfull Execution : {total_done}, Payload:{items}, Response : {results}")
+        # global total_done
+        # total_done +=1
+        # logger.info(f"Time:{get_bd_time()}, Execution Done and Total Successfull Execution : {total_done}, Payload:{items}, Response : {results}")
         pass
 
 
